@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+    <head>
+        <meta charset="utf-8">
+        <title>Mening saytim</title>
+        <style>
+            body{
+                background-color: rgb(178, 233, 233);
+                font-family: Arial, sans-serif;
+                margin: 40px;
+            }
+            h1{
+                color: blue;
+            }
+            a{
+                text-decoration: dashed;
+                color: green;
+                font-weight: bold;
+            }
+            img{
+                border-radius: 15px;
+                box-shadow: 0 0 15px gray;
+            }
+            ul{background-color: rgb(90, 212, 202);
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 400px;
+            }
+            li{
+                margin-bottom: 8px;
+            }
+            .Mashina{
+                color: red;
+                font-weight: bold;
+            }
+            .Kitob{
+                color: darkgreen;
+                font-style: italic;
+            }
+            .Sport{
+                color: navy;
+                text-decoration:underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Mening ismim Nozimjon</h1>
+        <a href="https://www.instagram.com">instagram sahifam</a>
+        <h2>Mening yoqtirgan mashinam</h2>
+        <img src="https://gallery.yopriceville.com/var/albums/Cars/Red_Ferrari__Wallpaper.jpg?m=1629778750" alt="Yoqtirgan mashinam " width="600">
+        <h2>Mening sevimli mashg'ulotlarim</h2>
+        <ul>
+        <li class="Mashina">Mashina haydash</li>
+        <li class="Kitob">Kitob o'qish</li>
+        <li class="Sport">Sport bilan shug'ullanish</li>
+        </ul>
+        <h2 id="Salom">Salom,mehmon!</h2>
+        <button onclick="ismKirit()">Ismni kiriting</button>
+            <h2>Mini o'yin</h2>
+            <button onclick="sonTop()">O'yinni boshlash</button>
+            <p id="Javob"></p>
+        <script>
+            function ismKirit(){
+                let ism = prompt("Ismingizni kiriting:")
+                if (ism){
+                document.getElementById("Salom").innerHTML="Salom, " +  ism + "!";
+                }
+            }
+            function sonTop(){
+                let randomSon = Math.floor(Math.random()*10)+1
+                let urinishlar = 3;
+                let topildi = false;
+                while(urinishlar > 0) {
+                    let taxmin = prompt("1 dan 10 gacha sonni toping! Qolgan urinishlar:  " + urinishlar);
+                    if(parseInt(taxmin) === randomSon) {
+                        document.getElementById("Javob").innerText="🎉 Barakalla! To'g'ri topdingiz! Men " + randomSon + " sonini o'ylagan edim.";
+                        topildi = true;
+                        break;
+                    }else{
+                        urinishlar--;
+                        alert("❌ Noto'g'ri. Qaytadan urinib ko'ring.");
+                    }
+                }
+                if(!topildi){
+                    document.getElementById("Javob").innerText="😞 Afsus! Urinishlaringiz tugadi. Men " + randomSon + " sonini o'ylagan edim.";
+                }
+            }
+        </script>
+    </body>
+</html>
